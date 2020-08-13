@@ -17,13 +17,13 @@ library.add(fab, icon, faHeart);
 
 export default function UserImages(props) {
   const [data, setData] = useState({ pics: [] });
-  const fontStyles = {
-    color: "red",
-    fontSize: "20px",
-  };
 
-  const noLikes = {
-    color: "",
+  // styles
+  const redHeart = {
+    color: "red",
+  };
+  const blackHeart = {
+    color: "black",
   };
 
   useEffect(() => {
@@ -56,9 +56,14 @@ export default function UserImages(props) {
             <FeedBack>
               <Section>
                 {/* change the color of heart depending on data.likes */}
-                <FontAwesomeIcon icon={faHeart} size="xl" style={fontStyles} />
+                <FontAwesomeIcon
+                  icon={data.likes ? solidHeart : faHeart}
+                  style={data.likes ? redHeart : blackHeart}
+                  size="lg"
+                />
+                {/* <FontAwesomeIcon icon={faHeart} style={fontStyles} /> */}
 
-                <FontAwesomeIcon icon={solidHeart} size="xl" />
+                {/* <FontAwesomeIcon icon={solidHeart} size="lg" /> */}
 
                 <p>Hi</p>
               </Section>
@@ -92,6 +97,7 @@ const UserBox = styled.article`
   border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   margin-bottom: 60px;
   width: 640px;
+  background: white;
 `;
 const Header = styled.header`
   height: 60px;
