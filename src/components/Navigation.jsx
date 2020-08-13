@@ -1,22 +1,18 @@
-import React from 'react';
-import styled from 'styled-components';
-import UserIcon from './UserIcon';
+import React from "react";
+import styled from "styled-components";
+import UserIcon from "./UserIcon";
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { 
-  faHome, 
-  faPaperPlane, 
-  faCompass, 
-  faHeart,
- } from '@fortawesome/free-solid-svg-icons';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-library.add(
-  faPaperPlane,
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
   faHome,
-  faCompass
-)
+  faPaperPlane,
+  faCompass,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(faPaperPlane, faHome, faCompass);
 
 export default function Navigation() {
   return (
@@ -27,45 +23,48 @@ export default function Navigation() {
         </div>
         <SearchDiv>
           <form>
-            <Input placeholder='Search'></Input>
+            <Input placeholder="Search"></Input>
           </form>
         </SearchDiv>
-      <FontAwesomeIcon icon={faHome} />
-      <FontAwesomeIcon icon={faPaperPlane} />
-      <FontAwesomeIcon icon={faCompass} />
-      <FontAwesomeIcon icon={faHeart} />
-      <UserIcon  />
+        <FontAwesomeIcon icon={faHome} />
+        <FontAwesomeIcon icon={faPaperPlane} />
+        <FontAwesomeIcon icon={faCompass} />
+        <FontAwesomeIcon icon={faHeart} />
+        <UserIcon />
       </Nav>
     </div>
-  )
-};
+  );
+}
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   height: 54px;
-  border-top: 1px solid #dbdbdb;
-  border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+  border-bottom: 1px solid rgb(219, 219, 219);
   -webkit-box-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  transition: height 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255);
 `;
 
 const Title = styled.h2`
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 1.5em;
   color: #2a263a;
-  
 `;
 
 const Input = styled.input`
-  border: 1px solid rgba(var(--b6a,219,219,219),1);
-  background: rgba(var(--b3f,250,250,250),1);
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  background: rgba(var(--b3f, 250, 250, 250), 1);
   border-radius: 3px;
   justify-content: center;
-  
-`
+`;
 const SearchDiv = styled.div`
   display: flex;
-  
+
   flex: 0 1 auto;
   min-width: 125px;
   width: 215px;
@@ -75,4 +74,4 @@ const SearchDiv = styled.div`
   padding: 0;
   position: relative;
   border: 0 solid #000;
-`
+`;
