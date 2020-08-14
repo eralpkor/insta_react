@@ -9,13 +9,12 @@ export default function Suggestions() {
     alignItems: "center",
     height: "100vh",
     width: "200px",
-    // maxHeight: "141px",
     background: "rgb(250, 250, 250);",
     margin: "50px 0 0 0",
     position: "fixed",
     marginLeft: "850px",
+    
     // delete later
-
     border: "1px solid black",
   };
 

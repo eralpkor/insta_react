@@ -8,6 +8,8 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import UserIcon from "./UserIcon";
 
+
+
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 // import { faBoxingGlove } from "@fortawesome/pro-light-svg-icons";
 // import { faHeart as faBoxingGloveRegular } from "@fortawesome/regular-light-svg-icons";
