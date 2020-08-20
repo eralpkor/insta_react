@@ -6,7 +6,8 @@ import UserImages from "./components/UserImages";
 import Suggestions from "./components/Suggestions";
 // import ImageSection from './components/ImageSection';
 
-function App() {
+function App(props) {
+  console.log("App props", props);
   return (
     <div>
       <Navigation />
