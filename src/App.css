@@ -10,14 +10,26 @@
   width: 100%;
   background-color: rgb(250, 250, 250);
   padding-top: 30px;
-  max-width: 935px;
+  /* max-width: 935px; */
   flex-grow: 1;
-  margin: 0 auto;
-  position: relative;
+  /* margin: 0 auto; */
+  /* position: relative; */
 }
 
 ::placeholder {
   color: rgb(142, 142, 142);
+}
+
+.error-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 250px;
+  height: 150px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
 }
 /* .App-logo {
   height: 40vmin;

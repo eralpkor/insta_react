@@ -8,7 +8,8 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import UserIcon from "./UserIcon";
 
-
+import useFetch from "../hooks/useFetch";
+import API from "../utils/API";
 
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
 // import { faBoxingGlove } from "@fortawesome/pro-light-svg-icons";
@@ -32,17 +33,42 @@ export default function UserImages(props) {
     axios
       .get("https://pixabay.com/api/?key=17864962-b5b3c380b7c652569844aadb6")
       .then((res) => {
-        console.log("Before useState", res.data.hits);
+        // console.log("Before useState", res.data.hits);
         let pictures = res.data.hits;
         setData({ pics: pictures });
-        console.log("After useState ", data.pics);
+        // console.log("After useState ", data.pics);
       })
       .catch((err) => console.log(err));
   }, []);
 
+  // const { response, isLoading, error } = useFetch({
+  //   api: API,
+  //   method: "get",
+  //   url: "/?key=b5b3c380b7c652569844aadb6",
+  // });
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   // console.log(response);
+  //   if (response !== null) {
+  //     setData(response);
+  //   }
+  // }, [response]);
+
+  console.log(data);
+
   return (
     <Main>
-      {data.pics &&
+      {/* {isLoading} */}
+
+      {/* {error && error.name && error.name === "Error" && (
+        <div className="error-grid">
+          <h3>{error.name}</h3>
+          <p>{error.message}</p>
+        </div>
+      )} */}
+
+      {data &&
         data.pics.map((data) => (
           <UserBox key={data.id}>
             <Header>
@@ -50,7 +76,7 @@ export default function UserImages(props) {
               <Span>{data.user}</Span>
             </Header>
             <div>
-              <ImageHolder data={data}>
+              <ImageHolder>
                 <Image src={data.webformatURL} alt={data.tags} />
               </ImageHolder>
             </div>
@@ -87,6 +113,7 @@ const Main = styled.main`
 
 const ImageHolder = styled.div`
   width: 640px;
+  
   display: flex;
 `;
 

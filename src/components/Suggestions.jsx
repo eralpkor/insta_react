@@ -4,7 +4,7 @@ import UserIcon from "./UserIcon";
 
 // import API from "../utils/API";
 
-// import UserImages from "./UserImages";
+import UserImages from "./UserImages";
 
 export default function Suggestions(props) {
   const [state, setstate] = useState({
@@ -31,13 +31,15 @@ export default function Suggestions(props) {
     border: "1px solid black",
   };
 
+console.log(props)
+
   return (
     <div style={section}>
       <Wrapper>
         <UserInfo>
           <UserIcon />
 
-          <a href="/">Hello</a>
+          <a href="/">Eralp</a>
         </UserInfo>
       </Wrapper>
     </div>

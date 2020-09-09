@@ -6,14 +6,15 @@ import UserImages from "./components/UserImages";
 import Suggestions from "./components/Suggestions";
 // import ImageSection from './components/ImageSection';
 
-function App(props) {
-  console.log("App props", props);
+// import Test from "./components/Test"
+
+function App() {
   return (
     <div>
       <Navigation />
       <div className="App">
         <Suggestions />
-        <UserImages />
+        <UserImages to="Sunny" from="Eralp" />
       </div>
     </div>
   );
